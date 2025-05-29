@@ -49,12 +49,51 @@ You will simulate short and long reads from the mystery genomes to reflect diffe
 - Pre-simulated reads will also be available in the `simulated_reads/` folder.
 
 
+
+### 🔧 Requirements
+
+Install dependencies using Python (you need [Biopython](https://biopython.org/)):
+
+```bash
+pip install biopython
+```
+
+
+This is how you can run the read simulation:
+
+```bash
+python scripts/simulate_reads.py <input_fasta> <output_prefix> --length <read_length> --num <num_reads>
+```
+
+
+We ran something like...
+```bash
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_longreads_1k --length 10000 --num 1000
+
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_shortreads_1k --length 180 --num 1000
+
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_longreads_1k --length 10000 --num 1000
+
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_shortreads_1k --length 180 --num 1000
+
+```
+
+But it is better to simulate much more reads!
 ---
 
 ## 3. 🔢 Count K-mers
 
-Now comes the fun part! You’ll analyze the read data with different k-mer lengths:  
+
+
+In this step, you'll count k-mers in your simulated reads. This helps reveal patterns like heterozygosity, repetitive content, and ploidy in genomes.
+
+You can analyze the read data with different k-mer lengths:
 `k = 11`, `21`, and `101`.
+
+We can write a Python script that slides a window of length `k` across each read to build a k-mer frequency table.
+
+
+
 
 ### Tasks:
 - Use a provided script to **count k-mers**.
