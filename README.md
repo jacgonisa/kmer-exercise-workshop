@@ -67,6 +67,7 @@ python scripts/simulate_reads.py <input_fasta> <output_prefix> --length <read_le
 
 
 We ran something like...
+
 ```bash
 python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_longreads_1k --length 10000 --num 1000
 
@@ -74,15 +75,22 @@ python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/geno
 
 python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_longreads_1k --length 10000 --num 1000
 
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_shortreads_1k --length 180 --num 1000
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_shortreads_1k --length 180 --num 1000
 
 ```
 
+
 But it is better to simulate much more reads!
+
+
+
 ---
 
 ## 3. 🔢 Count K-mers
 
+```bash
+mkdir results/kmer_counts
+```
 
 
 In this step, you'll count k-mers in your simulated reads. This helps reveal patterns like heterozygosity, repetitive content, and ploidy in genomes.
@@ -92,19 +100,66 @@ You can analyze the read data with different k-mer lengths:
 
 We can write a Python script that slides a window of length `k` across each read to build a k-mer frequency table.
 
+Then, we can run something like
+
+```bash
+
+python scripts/kmer_counter_from_fastq.py results/simulated_reads/genomeA_short_perfect.fq 21 > results/kmer_counts/genomeA_short_perfect_k21.tsv
+
+```
+which is a suitable output for  [**GenomeScope**](https://github.com/schatzlab/genomescope).
 
 
 
-### Tasks:
-- Use a provided script to **count k-mers**.
-- Create **k-mer histograms** for each genome.
-- Analyze patterns using [**GenomeScope**](https://github.com/schatzlab/genomescope) or your own intuition.
+You can automatize better with
 
-💬 **Katie**: Please confirm the k-mer counting tool or function (e.g., Jellyfish, KMC3, custom code).
+```
+for file in results/simulated_reads/*.fq; do for k in 11 21 101; do python scripts/kmer_counter_from_fastq.py "$file" "$k" > results/kmer_counts/$(basename "${file%.fq}")_k${k}.tsv; done; done
+```
+This can take quite memory space!
+
+
 
 ---
 
-## 🧠 What You'll Learn
+
+## 4. 🧠 Discussion
+
+Now that you have simulated reads and counted k-mers across multiple genome types and sequencing conditions, take some time to reflect and discuss the following:
+
+### 🔬 Biological Interpretation
+
+- What differences do you observe in k-mer spectra between **Genome A** and **Genome B**?
+- Can you infer **heterozygosity** or **repetitive content** from the k-mer profiles?
+- Do the k-mer distributions reveal anything about **genome size** or **ploidy**?
+
+### 🧪 Simulation Parameters
+
+- How do **read length** and **error rate** affect the k-mer spectra?
+- Compare perfect reads (100% accuracy) with those containing 90% and 99% sequence identity.
+  - What kinds of artifacts or noise do you observe in the spectra?
+  - Which error rate most resembles real sequencing data?
+
+### 🛠️ Technical Questions
+
+- What is the impact of the **k-mer size** (`k=11` vs `k=101`) on the spectrum?
+- Which k-mer size is best for identifying low-copy vs. high-copy sequences?
+- How do very short vs. very long k-mers behave in terms of uniqueness and information content?
+
+### 💭 Open Questions
+
+- Can you think of how this type of analysis could be useful for:
+  - **Detecting contamination?**
+  - **Estimating genome size without assembly?**
+  - **Comparing species in biodiversity genomics?**
+- How might this approach differ when applied to:
+  - **Metagenomes?**
+  - **Polyploid or hybrid genomes?**
+  - **Ancient DNA or degraded samples?**
+
+
+
+### What You Learned
 
 By the end of this exercise, you’ll be able to:
 - Simulate sequencing reads from genomic data.
@@ -114,6 +169,5 @@ By the end of this exercise, you’ll be able to:
 
 ---
 
-## 📁 Repository Layout
 
 
