@@ -34,8 +34,6 @@ Each genome represents different biological characteristics, such as:
 
 ---
 
----
-
 ## 2. 🧪 Simulate the Reads
 
 > 🔄 *This part will be done in groups.*
@@ -50,7 +48,6 @@ You will simulate short and long reads from the mystery genomes to reflect diffe
 - We’ll use **custom scripts** or read simulators.
 - Pre-simulated reads will also be available in the `simulated_reads/` folder.
 
-💬 **Katie**: Please suggest or confirm the read simulation function/tool to use.
 
 ---
 
