@@ -47,8 +47,8 @@ You will simulate short and long reads from the mystery genomes to reflect diffe
 | Type         | Length (bp) | Technology Mimicked          |
 |--------------|-------------|-------------------------------|
 | Short reads  | ~180        | Illumina-style                |
-| Long reads   | ~10,000     | Oxford Nanopore / PacBio      |
-
+| Long reads   | ~20,000     | Oxford Nanopore               |
+| Long reads   | ~10,000     | PacBio                        |
 
 
 ### 🛠 Tools & Code
