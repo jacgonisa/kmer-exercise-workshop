@@ -117,7 +117,6 @@ Then, we can run something like
 python scripts/kmer_counter_from_fastq.py results/simulated_reads/genomeA_short_perfect.fq 21 > results/kmer_counts/genomeA_short_perfect_k21.tsv
 
 ```
-which is a suitable output for  [**GenomeScope**](https://github.com/schatzlab/genomescope).
 
 
 
@@ -128,6 +127,35 @@ for file in results/simulated_reads/*.fq; do for k in 11 21 101; do python scrip
 ```
 This can take quite memory space!
 
+
+
+
+
+
+### 3.1 Make histogram for Genomescope
+
+Once you've counted k-mers (from .tsv files like genomeA_longreads_k21.tsv), you can summarize how often each count appears by converting it into a histogram file. This will allow you to analyze the frequency distribution of k-mers.
+
+```bash
+python scripts/kmercount_to_histogram.py <input_kmer_counts.tsv> <output_histogram.histo>
+
+```
+
+For instance,
+
+```bash
+python scripts/kmercount_to_histogram.py results/kmer_counts/genomeA_longreads_1k_acc90_k21.tsv results/hi
+stograms/genomeA_longreads_1k_acc90_k21.histo
+```
+
+We can automatize with
+
+```bash
+for f in results/kmer_counts/*.tsv; do
+  out="results/histograms/$(basename "$f" .tsv).histo"
+  python scripts/kmercount_to_histogram.py "$f" "$out"
+done
+```
 
 
 ---

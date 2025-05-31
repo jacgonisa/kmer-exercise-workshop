@@ -44,7 +44,6 @@ if __name__ == "__main__":
 
     error_profiles = {
         "perfect": 0.00,
-        "acc99": 0.01,
         "acc90": 0.10
     }
 
