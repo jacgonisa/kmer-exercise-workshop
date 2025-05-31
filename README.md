@@ -88,10 +88,8 @@ python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/geno
 
 
 > 💬 Reflect & Discuss
-
-
-- 🧮 **What is the actual sequencing coverage you're achieving with these simulations?**  
-  _Hint: Total number of bases simulated ÷ genome size._
+> **What is the actual sequencing coverage you're achieving with these simulations?**  
+> _Hint: Total number of bases simulated ÷ genome size._
 
 
 ---
