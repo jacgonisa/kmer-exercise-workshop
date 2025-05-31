@@ -140,19 +140,18 @@ Now that you have simulated reads and counted k-mers across multiple genome type
 ### 🔬 Biological Interpretation
 
 - What differences do you observe in k-mer spectra between **Genome A** and **Genome B**?
-- Can you infer **heterozygosity** or **repetitive content** from the k-mer profiles?
+- Can you infer **repetitive content** from the k-mer profiles?
 - Do the k-mer distributions reveal anything about **genome size** or **ploidy**?
 
 ### 🧪 Simulation Parameters
 
 - How do **read length** and **error rate** affect the k-mer spectra?
-- Compare perfect reads (100% accuracy) with those containing 90% and 99% sequence identity.
+- Compare perfect reads (100% accuracy) with those containing 90% accuracy.
   - What kinds of artifacts or noise do you observe in the spectra?
-  - Which error rate most resembles real sequencing data?
 
 ### 🛠️ Technical Questions
 
-- What is the impact of the **k-mer size** (`k=11` vs `k=101`) on the spectrum?
+- What is the impact of the **k-mer size** (for instance, `k=11` vs `k=101`) on the spectrum?
 - Which k-mer size is best for identifying low-copy vs. high-copy sequences?
 - How do very short vs. very long k-mers behave in terms of uniqueness and information content?
 
@@ -162,10 +161,7 @@ Now that you have simulated reads and counted k-mers across multiple genome type
   - **Detecting contamination?**
   - **Estimating genome size without assembly?**
   - **Comparing species in biodiversity genomics?**
-- How might this approach differ when applied to:
-  - **Metagenomes?**
-  - **Polyploid or hybrid genomes?**
-  - **Ancient DNA or degraded samples?**
+
 
 
 
