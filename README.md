@@ -150,7 +150,7 @@ python scripts/kmer_counter_from_fastq.py results/simulated_reads_coveragex10/ge
 You can automatize better with
 
 ```
-for file in results/simulated_reads/*.fq; do for k in 11 21 101; do python scripts/kmer_counter_from_fastq.py "$file" "$k" > results/kmer_counts/$(basename "${file%.fq}")_k${k}.tsv; done; done
+for file in results/simulated_reads_coveragex10/*.fq; do for k in 21 101; do python scripts/kmer_counter_from_fastq.py "$file" "$k" > results/kmer_counts_coveragex10/$(basename "${file%.fq}")_k${k}.tsv; done; done
 ```
 This can take quite memory space!
 
