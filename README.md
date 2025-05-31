@@ -40,13 +40,20 @@ Each genome represents different biological characteristics, such as:
 
 You will simulate short and long reads from the mystery genomes to reflect different sequencing technologies and error profiles.
 
+
+
 ### 🔧 Read Types
-- **Short reads** (~180 bp) — mimicking Illumina-style reads
-- **Long reads** (~10,000 bp) — mimicking Oxford Nanopore or PacBio
+
+| Type         | Length (bp) | Technology Mimicked          |
+|--------------|-------------|-------------------------------|
+| Short reads  | ~180        | Illumina-style                |
+| Long reads   | ~10,000     | Oxford Nanopore / PacBio      |
+
+
 
 ### 🛠 Tools & Code
 - We’ll use **custom scripts** or read simulators.
-- Pre-simulated reads will also be available in the `simulated_reads/` folder.
+- Pre-simulated reads will also be available in the `results/simulated_reads/` folder.
 
 
 
@@ -69,19 +76,22 @@ python scripts/simulate_reads.py <input_fasta> <output_prefix> --length <read_le
 We ran something like...
 
 ```bash
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_longreads_1k --length 10000 --num 1000
+# Genome A
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_longreads --length 10000 --num 47000
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_shortreads --length 180 --num 2595000
 
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_shortreads_1k --length 180 --num 1000
-
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_longreads_1k --length 10000 --num 1000
-
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_shortreads_1k --length 180 --num 1000
+# Genome B
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_longreads --length 10000 --num 47000
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_shortreads --length 180 --num 2595000
 
 ```
 
 
-But it is better to simulate much more reads!
+> 💬 Reflect & Discuss
 
+
+- 🧮 **What is the actual sequencing coverage you're achieving with these simulations?**  
+  _Hint: Total number of bases simulated ÷ genome size._
 
 
 ---
