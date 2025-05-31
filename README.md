@@ -171,15 +171,15 @@ python scripts/kmercount_to_histogram.py <input_kmer_counts.tsv> <output_histogr
 For instance,
 
 ```bash
-python scripts/kmercount_to_histogram.py results/kmer_counts/genomeA_longreads_1k_acc90_k21.tsv results/hi
-stograms/genomeA_longreads_1k_acc90_k21.histo
+python scripts/kmercount_to_histogram.py results/kmer_counts_coveragex10/genomeA_ONT_acc90_k21.tsv results/hi
+stograms_coveragex10/genomeA_ONT_acc90_k21.histo
 ```
 
 We can automatize with
 
 ```bash
-for f in results/kmer_counts/*.tsv; do
-  out="results/histograms/$(basename "$f" .tsv).histo"
+for f in results/kmer_counts_coveragex10/*.tsv; do
+  out="results/histograms_coveragex10/$(basename "$f" .tsv).histo"
   python scripts/kmercount_to_histogram.py "$f" "$out"
 done
 ```
