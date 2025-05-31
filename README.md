@@ -79,14 +79,14 @@ We ran something like...
 # Genome A
 
 ##Illumina
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_illumina --length 180 --num 133333 --error 0.001
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_illumina --length 180 --num 200000 --error 0.001
 
 ##ONT
 
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_ONT --length 20000 --num 1000 --error 0.1
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_ONT --length 20000 --num 1500 --error 0.1
 
 ##PacBio
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 2000 --error 0.005
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 3000 --error 0.005
 
 
 
@@ -96,14 +96,14 @@ python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_cove
 # Genome B
 
 ##Illumina
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_illumina --length 180 --num 133333 --error 0.001
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_illumina --length 180 --num 200000 --error 0.001
 
 ##ont
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_ONT --length 20000 --num 1000 --error 0.1
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_ONT --length 20000 --num 1500 --error 0.1
 
 ##PacBio
 
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_pacbio --length 10000 --num 2000 --error 0.005
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_pacbio --length 10000 --num 3000 --error 0.005
 
 
 
