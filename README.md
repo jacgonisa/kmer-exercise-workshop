@@ -8,10 +8,10 @@ This short, hands-on exercise is designed to explore how **k-mers** reflect geno
 
 ## 🗂️ Overview
 
-1. [Prepare data (10 min)](#1-prepare-the-data)
-2. [Simulate reads (20 min)](#2-simulate-the-reads)
-3. [Count k-mers (45 min)](#3-count-k-mers)
-4. 
+1. [Prepare data (10 min)](#1--prepare-the-data)
+2. [Simulate reads (20 min)](#2--simulate-the-reads)
+3. [Count k-mers (45 min)](#3--count-k-mers)
+4. [Discussion (35 min)](#4--discussion)
 
 
 ---
@@ -88,7 +88,9 @@ python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/geno
 
 
 > 💬 Reflect & Discuss
+
 > **What is the actual sequencing coverage you're achieving with these simulations?**  
+
 > _Hint: Total number of bases simulated ÷ genome size._
 
 
