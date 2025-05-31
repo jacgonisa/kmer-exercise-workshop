@@ -103,7 +103,7 @@ python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_cove
 
 ##PacBio
 
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 47000 --error 0.005
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_pacbio --length 10000 --num 47000 --error 0.005
 
 
 
