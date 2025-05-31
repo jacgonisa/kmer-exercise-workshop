@@ -77,12 +77,39 @@ We ran something like...
 
 ```bash
 # Genome A
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_longreads --length 10000 --num 47000
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads/genomeA_shortreads --length 180 --num 2595000
+
+##Illumina
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_illumina --length 180 --num 2595000 --error 0.001
+
+##ONT
+
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_ONT --length 20000 --num 23000 --error 0.1
+
+##PacBio
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 47000 --error 0.005
+
+
+
+
+
 
 # Genome B
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_longreads --length 10000 --num 47000
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads/genomeB_shortreads --length 180 --num 2595000
+
+##Illumina
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_illumina --length 180 --num 2595000 --error 0.001
+
+##ont
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_ONT --length 20000 --num 23000 --error 0.1
+
+##PacBio
+
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 47000 --error 0.005
+
+
+
+
+
+
 
 ```
 
