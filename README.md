@@ -79,14 +79,14 @@ We ran something like...
 # Genome A
 
 ##Illumina
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_illumina --length 180 --num 200000 --error 0.001
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_illumina --length 180 --num 350000 --error 0.001
 
 ##ONT
 
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_ONT --length 20000 --num 1500 --error 0.1
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_ONT --length 20000 --num 3000 --error 0.1
 
 ##PacBio
-python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 3000 --error 0.005
+python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_coveragex10/genomeA_pacbio --length 10000 --num 6000 --error 0.005
 
 
 
@@ -96,14 +96,14 @@ python scripts/simulate_reads.py data/genomeA.fasta results/simulated_reads_cove
 # Genome B
 
 ##Illumina
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_illumina --length 180 --num 200000 --error 0.001
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_illumina --length 180 --num 350000 --error 0.001
 
 ##ont
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_ONT --length 20000 --num 1500 --error 0.1
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_ONT --length 20000 --num 3000 --error 0.1
 
 ##PacBio
 
-python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_pacbio --length 10000 --num 3000 --error 0.005
+python scripts/simulate_reads.py data/genomeB.fasta results/simulated_reads_coveragex10/genomeB_pacbio --length 10000 --num 6000 --error 0.005
 
 
 
@@ -150,7 +150,7 @@ python scripts/kmer_counter_from_fastq.py results/simulated_reads_coveragex10/ge
 You can automatize better with
 
 ```
-for file in results/simulated_reads_coveragex10/*.fq; do for k in 21 101; do python scripts/kmer_counter_from_fastq.py "$file" "$k" > results/kmer_counts_coveragex10/$(basename "${file%.fq}")_k${k}.tsv; done; done
+for file in results/simulated_reads_coveragex20/*.fq; do for k in 21 101; do python scripts/kmer_counter_from_fastq.py "$file" "$k" > results/kmer_counts_coveragex10/$(basename "${file%.fq}")_k${k}.tsv; done; done
 ```
 This can take quite memory space!
 
@@ -178,8 +178,8 @@ stograms_coveragex10/genomeA_ONT_acc90_k21.histo
 We can automatize with
 
 ```bash
-for f in results/kmer_counts_coveragex10/*.tsv; do
-  out="results/histograms_coveragex10/$(basename "$f" .tsv).histo"
+for f in results/kmer_counts_coveragex20/*.tsv; do
+  out="results/histograms_coveragex20/$(basename "$f" .tsv).histo"
   python scripts/kmercount_to_histogram.py "$f" "$out"
 done
 ```
