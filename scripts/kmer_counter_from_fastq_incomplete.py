@@ -15,18 +15,24 @@ def read_fastq(file_path):
                 break
 
 def count_kmers(file_path, k):
-    kmers = defaultdict(int)
-    for seq in read_fastq(file_path):
-        for i in range(len(seq) - k + 1):
-            mer = seq[i:i+k]
-            kmers[mer] += 1
+
+
+####Here the k-mer counting function####    
+    
     return kmers
+
+
+
+
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python kmer_counter.py <input.fastq> <k>")
         sys.exit(1)
 
+###Feel free to change this as you wish!
+    
     input_file = sys.argv[1]
     k = int(sys.argv[2])
     kmers = count_kmers(input_file, k)
