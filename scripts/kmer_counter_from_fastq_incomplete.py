@@ -16,9 +16,14 @@ def read_fastq(file_path):
 
 def count_kmers(file_path, k):
 
+####Here the k-mer counting function##
+    kmers = defaultdict(int)
+    for seq in read_fastq(file_path):
+#######CONTINUE!#########    
 
-####Here the k-mer counting function####    
-    
+
+
+
     return kmers
 
 
