@@ -14,6 +14,14 @@ This short, hands-on exercise is designed to explore how **k-mers** reflect geno
 4. [Discussion (35 min)](#4--discussion)
 
 
+Clone the repository
+
+```bash
+git clone https://github.com/jacgonisa/kmer-exercise-workshop.git
+```
+
+
+
 ---
 
 ## 1. 🧬 Prepare the Data
