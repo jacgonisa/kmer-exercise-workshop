@@ -1,5 +1,5 @@
 # kmer-exercise-workshop
-Anexercise for the K-mer Workshop for Biodiversity Genomics (Wellcome Genome Campus, Hinxton)
+An exercise for the K-mer Workshop for Biodiversity Genomics (Wellcome Genome Campus, Hinxton)
 
 
 This short, hands-on exercise is designed to explore how **k-mers** reflect genome properties like **ploidy**, **heterozygosity**, and **repetitiveness**, using simulated reads and k-mer counting tools. The workshop is structured into three phases and should take ~75 minutes in total.
